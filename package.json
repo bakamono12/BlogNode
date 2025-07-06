@@ -1,0 +1,27 @@
+{
+    "name": "developer-blog",
+    "version": "1.0.0",
+    "description": "A developer blog built with Node.js, Express.js, and EJS",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+    },
+    "dependencies": {
+        "body-parser": "^2.2.0",
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "express-ejs-layouts": "^2.5.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    },
+    "keywords": [
+        "blog",
+        "nodejs",
+        "express",
+        "ejs"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+}
