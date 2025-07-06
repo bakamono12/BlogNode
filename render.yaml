@@ -10,7 +10,3 @@ services:
         value: production
     healthCheckPath: /
     autoDeploy: true
-    disk:
-      name: blog-data
-      mountPath: /data
-      sizeGB: 0.5
