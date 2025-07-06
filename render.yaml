@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: blog-post
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /
+    autoDeploy: true
+    disk:
+      name: blog-data
+      mountPath: /data
+      sizeGB: 1
+
+# Global environment variables
+environments:
+  - name: production
+    branch: main
