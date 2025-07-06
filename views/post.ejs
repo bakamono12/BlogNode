@@ -1,0 +1,42 @@
+<%- include('layout.ejs') %>
+
+    <div class="post-page">
+        <div class="post-header">
+            <a href="/" class="back-button">← Back</a>
+
+            <div class="social-share">
+                <a href="#" class="social-link twitter">🐦</a>
+                <a href="#" class="social-link facebook">📘</a>
+                <a href="#" class="social-link linkedin">💼</a>
+                <a href="#" class="social-link more">⋯</a>
+            </div>
+        </div>
+
+        <article class="post-content">
+            <div class="post-meta">
+                <span class="category category-<%= post.category.toLowerCase() %>">
+                    <%= post.category %>
+                </span>
+                <span class="date">
+                    <%= post.date %>
+                </span>
+            </div>
+
+            <h1 class="post-title">
+                <%= post.title %>
+            </h1>
+
+            <div class="post-body">
+                <% const paragraphs=post.content.split('\n\n'); paragraphs.forEach(paragraph=> {
+                    if (paragraph.trim().startsWith('.') || paragraph.trim().startsWith('@') ||
+                    paragraph.trim().includes('{')) {
+                    %>
+                    <pre class="code-block"><%= paragraph.trim() %></pre>
+                    <% } else { %>
+                        <p>
+                            <%= paragraph.trim() %>
+                        </p>
+                        <% } }); %>
+            </div>
+        </article>
+    </div>

@@ -1,0 +1,25 @@
+<%- include('layout.ejs') %>
+    <main class="main-content">
+
+        <div class="blog-grid">
+            <% posts.forEach(post=> { %>
+                <article class="blog-card">
+                    <div class="card-header">
+                        <span class="category category-<%= post.category.toLowerCase() %>">
+                            <%= post.category %>
+                        </span>
+                        <span class="date">
+                            <%= post.date %>
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="post-title">
+                            <a href="/post/<%= post.id %>">
+                                <%= post.title %>
+                            </a>
+                        </h2>
+                    </div>
+                </article>
+                <% }) %>
+        </div>
+    </main>
