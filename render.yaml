@@ -13,9 +13,4 @@ services:
     disk:
       name: blog-data
       mountPath: /data
-      sizeGB: 1
-
-# Global environment variables
-environments:
-  - name: production
-    branch: main
+      sizeGB: 0.5
