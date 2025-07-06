@@ -1,1 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.main-content {
+    margin: 0 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: -20px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.profile-info .name {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.profile-info .title {
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.blog-card {
+    background-color: #3a3a3a;
+    border: 1px solid #5f6163;
+    padding: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: #666;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.category {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.category-css {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.category-js {
+    background-color: #f1c40f;
+    color: black;
+}
+
+.category-html {
+    background-color: #3498db;
+    color: white;
+}
+
+.date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.post-title {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.post-title a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: #4ecdc4;
+}
+
+/* Post page styles */
+.post-page {
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 8px;
+    position: relative;
+    min-height: 600px;
+}
+
+.post-header {
+    background-color: #2a2a2a;
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-button {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #ffffff;
+}
+
+.social-share {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ffffff;
+}
+
+.post-content {
+    padding: 40px;
+}
+
+.post-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.post-content .post-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-body p {
+    margin-bottom: 20px;
+}
+
+.code-block {
+    background-color: #e8f4f8;
+    border: 1px solid #d1ecf1;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-info .name {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info .name {
+        font-size: 2.5rem;
+    }
+}
